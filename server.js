@@ -20,6 +20,10 @@ app.get('/', function(req, res) {
   res.send('<h1>hello world</h1>')
 })
 
+app.get('/home', function(req, res) {
+  res.render('home')
+})
+
 // Tell the app to listen on port 3000
 
 app.listen(3000, function() {
