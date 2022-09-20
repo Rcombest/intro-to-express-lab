@@ -7,6 +7,15 @@
   <title>Intro To Express Lab</title>
 </head>
 <body>
-  
+  <h1>Bands</h1>
+  <ul>
+    <% bands.forEach( band => { %>
+    <li>
+      <%= band.text %>
+      - 
+      <%= band.seen ? "seen" : "haven't seen" %>
+    </li>
+    <% }) %> 
+  </ul>
 </body>
 </html>
