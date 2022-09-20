@@ -2,6 +2,8 @@
 
 import express from 'express'
 
+import { bands } from './data/band-data.js'
+
 // Create Express app
 
 const app = express()
@@ -17,11 +19,17 @@ app.set('view engine', 'ejs')
 // Mount routes
 
 app.get('/', function(req, res) {
-  res.send('<h1>hello world</h1>')
+  res.redirect('/bands')
 })
 
 app.get('/home', function(req, res) {
   res.render('home')
+})
+
+app.get('/bands', function(req, res) {
+  res.render('bands/index', {
+    bands: bands
+  })
 })
 
 // Tell the app to listen on port 3000
